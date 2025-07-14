@@ -130,10 +130,17 @@
           <v-sheet width="320px" class="image-container bg-transparent">
             <v-img
               :src="assemblyInfo.image"
+              :lazy-src="assemblyInfo.image"
               :alt="assemblyInfo.imageAlt"
               cover
               class="rounded-sm w-[100%] shadow-lg"
-            />
+            >
+              <template v-slot:placeholder>
+                <v-row align="center" class="fill-height ma-0" justify="center">
+                  <v-progress-circular color="grey-lighten-5" indeterminate/>
+                </v-row>
+              </template>
+            </v-img>
           </v-sheet>
         </div>
 
