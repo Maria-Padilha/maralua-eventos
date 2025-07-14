@@ -1,30 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <v-app :theme="darkMode.darkMode ? 'dark' : ''">
+    <app-bar />
+    <router-view />
+    <footer-bar />
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+import AppBar from "@/components/default/AppBar.vue";
+import {useDarkModeStore} from "@/stores/themes/darkmode";
+import FooterBar from "@/components/default/FooterBar.vue";
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+const darkMode = useDarkModeStore();
+</script>

@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import NotFoundView from "@/views/NotFoundView.vue";
+import AboutUsView from "@/views/AboutUsView.vue";
+import PlataformaView from "@/views/PlataformaView.vue";
+import EspelhoView from "@/views/EspelhoView.vue";
+import CabineView from "@/views/CabineView.vue";
+import TotemView from "@/views/TotemView.vue";
+import ContatoView from "@/views/ContatoView.vue";
 
 const routes = [
   {
@@ -9,12 +16,40 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    name: 'aboutUs',
+    component: AboutUsView
+  },
+  {
+    path: '/plataforma',
+    name: 'plataforma',
+    component: PlataformaView
+  },
+  {
+    path: '/espelho',
+    name: 'espelho',
+    component: EspelhoView
+  },
+  {
+    path: '/cabine',
+    name: 'cabine',
+    component: CabineView
+  },
+  {
+    path: '/totem',
+    name: 'totem',
+    component: TotemView
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: ContatoView
+  },
+
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundView,
+  },
 ]
 
 const router = createRouter({
