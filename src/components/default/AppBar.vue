@@ -30,6 +30,7 @@
       </div>
     </div>
   </v-app-bar>
+
   <v-scroll-y-reverse-transition>
     <section
         v-if="openMenu" :class="darkMode.darkMode ? 'bg-dark' : 'bg-light'"
