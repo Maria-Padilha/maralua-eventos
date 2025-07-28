@@ -1,17 +1,17 @@
 <template>
-  <v-app-bar class="py-2 px-4 mb-20" :elevation="0" :color="darkMode.darkMode ? '#282828' : '#E9E9E9'">
+  <v-app-bar class=" px-4 mb-20" :elevation="0" :color="darkMode.darkMode ? '#282828' : '#E9E9E9'">
     <div class="w-[100%] flex items-center justify-between">
-      <v-sheet class="md:w-[300px] w-[230px] bg-transparent">
+      <v-sheet class="md:w-[250px] w-[230px] bg-transparent">
         <v-img height="auto" class="w-[100%]" cover alt="logo maraluaFotocabine" :src="require('@/assets/img/logos/Png/Maralua_Horizontal-1.png')" />
       </v-sheet>
 
-      <div v-if="!rail" class="flex items-center lg:gap-10 mr-16 lg:text-base text-sm gap-5">
-        <router-link v-for="link in links" :key="link.id" active-class="px-4 py-1 rounded-sm bg-orange" :to="link.route">
+      <div v-if="!rail" class="flex items-center lg:text-base text-sm gap-5">
+        <router-link v-for="link in links" :key="link.id" active-class="px-4 py-1 rounded-sm bg-orange text-sm" :to="link.route">
           {{ link.text }}
         </router-link>
       </div>
 
-      <div class="flex items-center gap-2 md:mr-8 mr-4">
+      <div class="flex items-center gap-2 md:mx-8 mx-4">
         <v-btn
             v-if="rail" aria-label="abrir menu"
             variant="text" size="large"
@@ -19,16 +19,17 @@
             :color="darkMode.darkMode ? 'white' : 'black'"
             @click="openMenu = !openMenu"
         />
-        <v-btn
-            aria-label="mudar tema do site"
-            variant="tonal" icon="mdi-brightness-6"
-            :color="darkMode.darkMode ? '#ffaf65' : '#fd9836'"
-            @click="darkMode.darkMode = !darkMode.darkMode"
+
+        <v-switch
+            inset
+            color="var(--color-light-orange-medium)"
+            hide-details false-icon="mdi-weather-night"
+            true-icon="mdi-white-balance-sunny"
+            v-model="darkMode.darkMode"
         />
       </div>
     </div>
   </v-app-bar>
-
   <v-scroll-y-reverse-transition>
     <section
         v-if="openMenu" :class="darkMode.darkMode ? 'bg-dark' : 'bg-light'"

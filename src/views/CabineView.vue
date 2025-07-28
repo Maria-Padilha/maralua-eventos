@@ -6,6 +6,7 @@
       :steps="steps"
       :how-it-works-section="howItWorksSection"
       :assembly-info="montagemInfo"
+      :faqs="perguntasFrequentes"
   >
     <template #media-content>
         <v-sheet width="300px" class="bg-transparent">
@@ -48,10 +49,10 @@ const darkMode = useDarkModeStore();
 const selectedPhoto = ref(0);
 
 const photos = ref([
-  { id: 0, src: require('@/assets/img/home/clientes-6.jpg'), alt: '' },
-  { id: 1, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 2, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 3, src: require('@/assets/img/home/clientes-8.jpg'), alt: '' },
+  { id: 0, src: require('@/assets/img/equipamentos/cabine/cabine-pessoas-2.jpg'), alt: '' },
+  { id: 1, src: require('@/assets/img/equipamentos/cabine/cabine-pessoas-3.jpg'), alt: '' },
+  { id: 2, src: require('@/assets/img/equipamentos/cabine/cabine-pessoas-4.jpg'), alt: '' },
+  { id: 3, src: require('@/assets/img/equipamentos/tirinhas/img-1.jpg'), alt: '' },
 ]);
 
 const productInfo = ref({
@@ -77,12 +78,12 @@ const howItWorksSection = ref({
 const planos = ref([
   {
     id: 1,
-    duration: '1h',
+    duration: '2h',
     name: 'Plano Essencial',
     description: 'Perfeito para eventos íntimos e familiares',
     popular: false,
     features: [
-      '1 hora de cabine fotográfica',
+      '2 hora de cabine fotográfica',
       'Impressão ilimitada de fotos',
       'Adereços e acessórios inclusos',
       'Operador especializado'
@@ -90,12 +91,12 @@ const planos = ref([
   },
   {
     id: 2,
-    duration: '2h',
+    duration: '3h',
     name: 'Plano Celebração',
     description: 'Ideal para festas e comemorações',
     popular: true,
     features: [
-      '2 horas de cabine fotográfica',
+      '3 horas de cabine fotográfica',
       'Impressão ilimitada de fotos',
       'Adereços e fundos personalizados',
       'Galeria digital online',
@@ -104,12 +105,12 @@ const planos = ref([
   },
   {
     id: 3,
-    duration: '3h',
+    duration: '4h',
     name: 'Plano Premium',
     description: 'Para eventos grandes e especiais',
     popular: false,
     features: [
-      '3 horas de cabine fotográfica',
+      '4 horas de cabine fotográfica',
       'Impressão ilimitada de fotos',
       'Adereços e fundos exclusivos',
       'Galeria digital premium',
@@ -144,7 +145,7 @@ const steps = ref([
 const montagemInfo = ref({
   titlePart1: 'Montagem e',
   titlePart2: 'Desmontagem',
-  image: require('@/assets/img/home/cabine.jpg'),
+  image: require('@/assets/img/equipamentos/cabine/cabine.jpg'),
   imageAlt: 'Equipe realizando montagem da Cabine Fotográfica',
   listTitle: 'O que incluímos:',
   paragraphs: [
@@ -156,12 +157,26 @@ const montagemInfo = ref({
     'Montagem completa da cabine fotográfica',
     'Operador presente durante todo evento',
     'Sistema de iluminação profissional',
-    'Impressora com papel fotográfico ilimitado',
-    'Kit completo de adereços e acessórios',
+    'Acessórios Personalizados',
     'Galeria digital com todas as fotos',
-    'Desmontagem e limpeza final'
+    'Desmontagem ao final do evento'
   ]
 });
+
+const perguntasFrequentes = ref([
+  {
+    question: 'Como funciona a cabine fotográfica?',
+    answer: 'A cabine fotográfica é um espaço privativo onde os convidados podem tirar fotos divertidas com adereços. Basta entrar, escolher os adereços, posicionar-se e sorrir! As fotos são impressas instantaneamente.'
+  },
+  {
+    question: 'Quantas pessoas cabem na cabine?',
+    answer: 'A cabine fotográfica comporta confortavelmente até 6 pessoas por sessão, mas não há limite de quantas vezes cada pessoa pode entrar durante o evento.'
+  },
+  {
+    question: 'As fotos são impressas na hora?',
+    answer: 'Sim! Todas as fotos tiradas na cabine são impressas instantaneamente para que os convidados possam levar uma lembrança física do evento.'
+  }
+]);
 </script>
 
 <style scoped>

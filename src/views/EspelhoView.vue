@@ -6,6 +6,7 @@
       :steps="steps"
       :how-it-works-section="howItWorksSection"
       :assembly-info="montagemInfo"
+      :faqs="perguntasFrequentes"
   >
     <template #media-content>
         <v-sheet width="300px" class="bg-transparent">
@@ -48,10 +49,10 @@ const darkMode = useDarkModeStore();
 const selectedPhoto = ref(0);
 
 const photos = ref([
-  { id: 0, src: require('@/assets/img/home/clientes-6.jpg'), alt: '' },
-  { id: 1, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 2, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 3, src: require('@/assets/img/home/clientes-8.jpg'), alt: '' },
+  { id: 0, src: require('@/assets/img/equipamentos/espelho/clientes-6.jpg'), alt: '' },
+  { id: 1, src: require('@/assets/img/equipamentos/espelho/clientes-5.jpg'), alt: '' },
+  { id: 2, src: require('@/assets/img/equipamentos/espelho/clientes-1.jpg'), alt: '' },
+  { id: 3, src: require('@/assets/img/equipamentos/espelho/clientes-8.jpg'), alt: '' },
 ]);
 
 const productInfo = ref({
@@ -77,12 +78,12 @@ const howItWorksSection = ref({
 const planos = ref([
   {
     id: 1,
-    duration: '1h',
+    duration: '2h',
     name: 'Plano Essencial',
     description: 'Perfeito para eventos íntimos e familiares',
     popular: false,
     features: [
-      '1 hora de espelho mágico',
+      '2 hora de espelho mágico',
       'Impressão ilimitada de fotos',
       'Filtros e molduras personalizadas',
       'Operador especializado'
@@ -90,12 +91,12 @@ const planos = ref([
   },
   {
     id: 2,
-    duration: '2h',
+    duration: '3h',
     name: 'Plano Celebração',
     description: 'Ideal para festas e comemorações',
     popular: true,
     features: [
-      '2 horas de espelho mágico',
+      '3 horas de espelho mágico',
       'Impressão ilimitada de fotos',
       'Filtros e molduras personalizadas',
       'Galeria digital online',
@@ -104,12 +105,12 @@ const planos = ref([
   },
   {
     id: 3,
-    duration: '3h',
+    duration: '4h',
     name: 'Plano Premium',
     description: 'Para eventos grandes e especiais',
     popular: false,
     features: [
-      '3 horas de espelho mágico',
+      '4 horas de espelho mágico',
       'Impressão ilimitada de fotos',
       'Filtros e molduras personalizadas',
       'Galeria digital premium',
@@ -144,7 +145,7 @@ const steps = ref([
 const montagemInfo = ref({
   titlePart1: 'Montagem e',
   titlePart2: 'Desmontagem',
-  image: require('@/assets/img/home/espelho.jpg'), // Substitua pela imagem do espelho
+  image: require('@/assets/img/equipamentos/espelho/espelho.jpg'), // Substitua pela imagem do espelho
   imageAlt: 'Equipe realizando montagem do Espelho Mágico',
   listTitle: 'O que incluímos:',
   paragraphs: [
@@ -156,11 +157,30 @@ const montagemInfo = ref({
     'Montagem completa do espelho mágico',
     'Operador presente durante todo evento',
     'Sistema de som e iluminação',
-    'Impressora com papel fotográfico ilimitado',
+    'Acessórios Personalizados',
     'Galeria digital com todas as fotos',
-    'Desmontagem e limpeza final'
+    'Desmontagem ao final do evento'
   ]
 });
+
+const perguntasFrequentes = ref([
+  {
+    question: 'O que é o Espelho Mágico?',
+    answer: 'É uma cabine fotográfica interativa que combina tecnologia de ponta com diversão, permitindo que os convidados tirem fotos com efeitos especiais e filtros personalizados.'
+  },
+  {
+    question: 'Como funciona a impressão das fotos?',
+    answer: 'As fotos são impressas instantaneamente após serem tiradas, com opções de personalização como molduras e filtros.'
+  },
+  {
+    question: 'Como posso personalizar as fotos?',
+    answer: 'Você pode escolher entre uma variedade de filtros, molduras e efeitos especiais para personalizar suas fotos.'
+  },
+  {
+    question: 'A equipe cuida da montagem e desmontagem?',
+    answer: 'Sim! Nossa equipe especializada realiza toda a montagem e desmontagem do equipamento, garantindo uma experiência tranquila para você.'
+  }
+]);
 </script>
 
 <style scoped>

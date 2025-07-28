@@ -20,6 +20,7 @@
             <v-col cols="12" md="8" lg="6">
               <v-card
                   class="pa-8 elevation-8"
+                  elevation="0"
                   :class="darkMode.darkMode ? 'bg-grey-darken-3' : 'bg-white'"
                   rounded="lg"
               >
@@ -117,7 +118,7 @@
                           color="orange"
                           size="large"
                           class="px-8"
-                          elevation="2"
+                          elevation="0"
                           prepend-icon="mdi-whatsapp"
                       >
                         Enviar via WhatsApp

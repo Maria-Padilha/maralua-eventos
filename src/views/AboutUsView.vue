@@ -1,11 +1,11 @@
 <template>
   <top-all-views>
     <template v-slot:section>
-      <section class="w-[100%] grid md:grid-cols-2 grid-cols-1 gap-y-5 gap-x-3 mb-5">
+      <section data-aos="zoom-in" data-aos-duration="1200" class="w-[100%] grid md:grid-cols-2 grid-cols-1 gap-y-5 gap-x-3 mb-5">
         <v-sheet class="col-span-1 h-[700px] bg-transparent">
           <v-img
               width="100%" height="100%" contain alt="foto dos donos da Maralua - Fernanda e Wyccthor"
-              :src="require('@/assets/img/home/donos.jpg')"
+              :src="require('@/assets/img/equipamentos/donos.jpg')"
           ></v-img>
         </v-sheet>
 
@@ -54,17 +54,18 @@
 
     <template v-slot:end>
       <section>
-        <section
+        <div
             :class="darkMode.darkMode ? 'bg-dark-orange text-black' : 'bg-light-orange text-white'"
             class="w-[100%] h-[200px] flex items-center justify-center flex-col gap-3 text-center">
           <h2 class="text-2xl font-bold">Eternizando Momentos</h2>
           <p class="opacity-70">Sua festa merece ser inesquecível com Plataforma 360 • Cabine Fotográfica • Espelho Retrô</p>
-        </section>
+        </div>
 
         <v-card
+            data-aos="zoom-in" data-aos-duration="1200"
             :color="darkMode.darkMode ? '#2A2A2A' : '#fff'" elevation="2"
             class="rounded-md w-[80%] mx-auto px-2 absolute z-10 top-[-50px] py-2 border-card">
-          <section class="gap-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+          <div class="gap-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
             <div
                 v-for="(card, index) in cards" :key="index"
                 class="col-span-1 h-[120px] flex items-center justify-center text-center flex-col gap-1"
@@ -73,7 +74,7 @@
               <p :class="darkMode.darkMode ? 'text-white' : 'text-gray-900'" class="text-2xl font-bold">{{ card.number }}</p>
               <p :class="darkMode.darkMode ? 'text-gray-300' : 'text-gray-700'">{{ card.text }}</p>
             </div>
-          </section>
+          </div>
         </v-card>
       </section>
     </template>

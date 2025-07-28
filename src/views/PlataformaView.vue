@@ -6,6 +6,7 @@
     :steps="steps"
     :how-it-works-section="howItWorksSection"
     :assembly-info="montagemInfo"
+    :faqs="perguntasFrequentes"
   >
     <template #media-content>
       <div>
@@ -54,10 +55,10 @@ const darkMode = useDarkModeStore();
 const selectedVideo = ref(0);
 
 const videos = ref([
-  { id: 0, src: require('@/assets/videos/video-3.mp4') },
-  { id: 1, src: require('@/assets/videos/video-1.mp4') },
-  { id: 2, src: require('@/assets/videos/video-3.mp4') },
-  { id: 3, src: require('@/assets/videos/video-1.mp4') },
+  { id: 0, src: require('@/assets/videos/video-solteira.mp4') },
+  { id: 1, src: require('@/assets/videos/video-homens.mp4') },
+  { id: 2, src: require('@/assets/videos/video-noiva.mp4') },
+  { id: 3, src: require('@/assets/videos/video-preciosas.mp4') },
 ]);
 
 const productInfo = ref({
@@ -83,27 +84,27 @@ const howItWorksSection = ref({
 const planos = ref([
   {
     id: 1,
-    duration: '1h',
+    duration: '2h',
     name: 'Plano Essencial',
     description: 'Ideal para eventos rápidos e dinâmicos',
     popular: false,
-    features: ['1 hora de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
+    features: ['2 hora de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
   },
   {
     id: 2,
-    duration: '2h',
+    duration: '3h',
     name: 'Plano Celebração',
     description: 'Perfeito para festas e celebrações',
     popular: true,
-    features: ['2 horas de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
+    features: ['3 horas de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
   },
   {
     id: 3,
-    duration: '3h',
+    duration: '4h',
     name: 'Plano Premium',
     description: 'Para eventos grandes e especiais',
     popular: false,
-    features: ['3 horas de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
+    features: ['4 horas de evento', 'Edição instantânea', 'QR Code para download', 'Backup dos vídeos', 'Suporte técnico premium']
   }
 ]);
 
@@ -133,7 +134,7 @@ const steps = ref([
 const montagemInfo = ref({
   titlePart1: 'Montagem e',
   titlePart2: 'Desmontagem',
-  image: require('@/assets/img/home/cabine.jpg'),
+  image: require('@/assets/img/equipamentos/plataforma/plataforma.png'),
   imageAlt: 'Equipe realizando montagem da Plataforma 360',
   listTitle: 'O que incluímos:',
   paragraphs: [
@@ -145,9 +146,25 @@ const montagemInfo = ref({
     'Montagem completa da plataforma',
     'Equipe presente durante todo o evento',
     'Suporte técnico especializado',
+    'Acessórios Personalizados',
     'Desmontagem ao final do evento'
   ]
 });
+
+const perguntasFrequentes = ref([
+  {
+    question: 'Como funciona a Plataforma 360?',
+    answer: 'A Plataforma 360 permite que os convidados gravem vídeos em alta resolução, que são editados instantaneamente e disponibilizados via QR Code.'
+  },
+  {
+    question: 'Quais são os planos disponíveis?',
+    answer: 'Oferecemos três planos: Essencial, Celebração e Premium, cada um com diferentes durações e recursos.'
+  },
+  {
+    question: 'É necessário agendar com antecedência?',
+    answer: 'Sim, recomendamos agendar o quanto antes para garantir a disponibilidade da Plataforma 360 no dia do seu evento.'
+  }
+]);
 </script>
 
 <style scoped>

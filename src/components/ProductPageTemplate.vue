@@ -2,27 +2,28 @@
   <top-all-views>
     <template v-slot:section>
       <section class="w-[100%] grid md:grid-cols-2 grid-cols-1 gap-x-20 gap-y-5 mt">
-        <div class="col-span-1 flex flex-col justify-center items-start text-justify">
+        <div data-aos="zoom-in-right" data-aos-duration="1200" class="col-span-1 flex flex-col justify-center items-start text-justify">
           <text-orange-color font-size="3">
             <template v-slot:title>{{ productInfo.title }}</template>
             <template v-slot:span>{{ productInfo.titleSpan }}</template>
           </text-orange-color>
 
           <p
-            v-for="paragraph in productInfo.descriptions"
-            :key="paragraph"
-            :class="darkMode.darkMode ? 'text-gray-300' : ''"
-            class=" mt-3"
+              v-for="paragraph in productInfo.descriptions"
+              :key="paragraph"
+              :class="darkMode.darkMode ? 'text-gray-300' : ''"
+              class=" mt-3"
           >
             {{ paragraph }}
           </p>
 
-          <button-contact />
+          <button-contact/>
         </div>
 
         <div
-          class="col-span-1 border-radius px-4 py-4 flex flex-col md:flex-row gap-5 items-center justify-center h-auto"
-          :class="darkMode.darkMode ? 'border-dark' : 'border-light'"
+            data-aos="zoom-in-left" data-aos-duration="1200"
+            class="col-span-1 border-radius px-4 py-4 flex flex-col md:flex-row gap-5 items-center justify-center h-auto"
+            :class="darkMode.darkMode ? 'border-dark' : 'border-light'"
         >
           <!-- Slot para conteúdo customizado (vídeos, imagens, etc.) -->
           <slot name="media-content"></slot>
@@ -31,7 +32,10 @@
     </template>
 
     <template #meio>
-      <section class="w-[100%] mt-32 mb-10 px-10 py-5" :class="darkMode.darkMode ? 'bg-dark-orange text-black' : 'bg-light-orange text-white'">
+      <section
+          class="w-[100%] mt-32 mb-10 px-10 py-5"
+          :class="darkMode.darkMode ? 'bg-dark-orange text-black' : 'bg-light-orange text-white'"
+      >
         <div class="text-center mb-12">
           <text-orange-color font-size="3">
             <template v-slot:title>{{ plansSection.title }}</template>
@@ -44,14 +48,15 @@
 
         <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
           <div
-            v-for="plano in plans"
-            :key="plano.id"
-            class="plan-card border-radius px-6 py-8 text-center transition-all hover:scale-105 relative"
-            :class="darkMode.darkMode ? 'border-dark bg-[#282828]' : 'border-light bg-white'"
+              data-aos="zoom-in" data-aos-duration="1200"
+              v-for="plano in plans"
+              :key="plano.id"
+              class="plan-card border-radius px-6 py-8 text-center hover:transicao"
+              :class="darkMode.darkMode ? 'border-dark bg-[#282828]' : 'border-light bg-white'"
           >
             <div
-              v-if="plano.popular"
-              class="popular-badge absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold"
+                v-if="plano.popular"
+                class="popular-badge absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold"
             >
               Mais Popular
             </div>
@@ -71,16 +76,16 @@
 
             <ul class="text-left mb-6 space-y-2">
               <li
-                v-for="feature in plano.features"
-                :key="feature"
-                class="flex items-center"
-                :class="darkMode.darkMode ? 'text-gray-300' : 'text-gray-600'"
+                  v-for="feature in plano.features"
+                  :key="feature"
+                  class="flex items-center"
+                  :class="darkMode.darkMode ? 'text-gray-300' : 'text-gray-600'"
               >
                 <span class="text-orange-500 mr-2">✓</span>
                 {{ feature }}
               </li>
             </ul>
-            <button-contact />
+            <button-contact/>
           </div>
         </div>
       </section>
@@ -98,11 +103,11 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-8">
+        <div data-aos="zoom-in" data-aos-duration="1200" class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-8">
           <div
-            v-for="step in steps"
-            :key="step.id"
-            class="step-card text-center"
+              v-for="step in steps"
+              :key="step.id"
+              class="step-card text-center"
           >
             <div class="step-number mb-4">
               <div class="w-16 h-16 mx-auto rounded-full bg-orange-500 flex items-center justify-center">
@@ -126,14 +131,14 @@
       </section>
 
       <section class="w-[100%] grid md:grid-cols-2 grid-cols-1 gap-10 mt-32 mb-10">
-        <div class="col-span-1 flex justify-center items-center">
-          <v-sheet width="320px" class="image-container bg-transparent">
+        <div data-aos="zoom-in-right" data-aos-duration="1200" class="col-span-1 flex justify-center items-center">
+          <v-sheet width="320px" class="image-container bg-transparent quadro">
             <v-img
-              :src="assemblyInfo.image"
-              :lazy-src="assemblyInfo.image"
-              :alt="assemblyInfo.imageAlt"
-              cover
-              class="rounded-sm w-[100%] shadow-lg"
+                :src="assemblyInfo.image"
+                :lazy-src="assemblyInfo.image"
+                :alt="assemblyInfo.imageAlt"
+                cover
+                class="rounded-sm w-[100%] shadow-lg"
             >
               <template v-slot:placeholder>
                 <v-row align="center" class="fill-height ma-0" justify="center">
@@ -144,17 +149,17 @@
           </v-sheet>
         </div>
 
-        <div class="col-span-1 flex flex-col justify-center items-start text-justify">
+        <div data-aos="zoom-in-left" data-aos-duration="1200" class="col-span-1 flex flex-col justify-center items-start text-justify">
           <text-orange-color font-size="">
             <template v-slot:title>{{ assemblyInfo.titlePart1 }}</template>
             <template v-slot:span>{{ assemblyInfo.titlePart2 }}</template>
           </text-orange-color>
 
           <p
-            v-for="paragraph in assemblyInfo.paragraphs"
-            :key="paragraph"
-            :class="darkMode.darkMode ? 'text-gray-300' : ''"
-            class="text-sm mt-4"
+              v-for="paragraph in assemblyInfo.paragraphs"
+              :key="paragraph"
+              :class="darkMode.darkMode ? 'text-gray-300' : ''"
+              class="text-sm mt-4"
           >
             {{ paragraph }}
           </p>
@@ -163,19 +168,44 @@
             <h4 class="font-bold text-lg mb-3" :class="darkMode.darkMode ? 'text-white' : 'text-gray-800'">
               {{ assemblyInfo.listTitle }}
             </h4>
-            <ul class="space-y-2">
-              <li
-                v-for="item in assemblyInfo.listItems"
-                :key="item"
-                class="flex items-center text-sm"
-                :class="darkMode.darkMode ? 'text-gray-300' : 'text-gray-600'"
-              >
-                <span class="text-orange-500 mr-3">✓</span>
-                {{ item }}
-              </li>
-            </ul>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-5 w-100">
+              <v-sheet class="bg-transparent col-span-1 h-[150px] quadro">
+                <v-img class="w-[100%] h-[100%]" alt="acessórios" cover :src="require('@/assets/img/equipamentos/acessorios.jpg')" />
+              </v-sheet>
+
+              <ul class="col-span-1">
+                <li
+                    v-for="item in assemblyInfo.listItems"
+                    :key="item"
+                    class="flex items-center text-sm"
+                    :class="(item === 'Acessórios Personalizados' ? 'texto-color-laranja' : (darkMode.darkMode ? 'text-gray-300' : 'text-gray-600'))"
+                >
+                  <span class="text-orange-500 mr-3">✓</span>
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section class="mt-10 w-[100%]">
+        <div class="text-center">
+          <text-orange-color font-size="3">
+            <template v-slot:title>Perguntas</template>
+            <template v-slot:span>Frequentes</template>
+          </text-orange-color>
+        </div>
+
+        <v-expansion-panels data-aos="zoom-in" data-aos-duration="1200" class="my-10" elevation="0">
+          <v-expansion-panel
+              v-for="i in faqs"
+              :key="i"
+              :text="i.answer"
+              :title="i.question"
+          ></v-expansion-panel>
+        </v-expansion-panels>
       </section>
     </template>
   </top-all-views>
@@ -185,7 +215,7 @@
 import TopAllViews from "@/components/default/TopAllViews.vue";
 import TextOrangeColor from "@/components/TextOrangeColor.vue";
 import ButtonContact from "@/components/ButtonContact.vue";
-import { useDarkModeStore } from "@/stores/themes/darkmode";
+import {useDarkModeStore} from "@/stores/themes/darkmode";
 import {defineProps} from "vue";
 
 const darkMode = useDarkModeStore();
@@ -214,11 +244,22 @@ defineProps({
   assemblyInfo: {
     type: Object,
     required: true
+  },
+  faqs: {
+    type: Array,
+    required: true
   }
 });
 </script>
 
 <style scoped>
+.transicao{
+  transition: all 0.3s ease;
+}
+.quadro{
+  border: 3px solid var(--color-orange);
+}
+
 .mt {
   margin-top: 30px;
 }

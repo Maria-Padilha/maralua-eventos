@@ -12,6 +12,35 @@
     --color-dark-orange: #ffaf65;
 }
 
+:root {
+    --color-primary: #F1F1F1;
+    --color-secondary: #E9E9E9;
+    --color-orange-medium: #fd8839;
+    --color-orange: #fd9836;
+
+    --color-card: #E4E4E4;
+
+    --text-primary: #121212;
+}
+
+.dark {
+    --color-primary: #121212;
+    --color-secondary: #282828;
+    --color-orange-medium: #ffa366;
+    --color-orange: #ffaf65;
+
+    --color-card: #393939;
+
+    --text-primary: #F1F1F1;
+}
+
+.texto-color-laranja{
+    color: var(--color-orange) !important;
+}
+
+.background-card {
+    background-color: var(--color-card) !important;
+}
 
 body {
     font-family: 'CodecPro', sans-serif !important;

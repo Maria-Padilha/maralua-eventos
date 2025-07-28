@@ -6,6 +6,7 @@
       :steps="steps"
       :how-it-works-section="howItWorksSection"
       :assembly-info="montagemInfo"
+      :faqs="perguntasFrequentes"
   >
     <template #media-content>
         <v-sheet width="300px" class="bg-transparent">
@@ -48,10 +49,10 @@ const darkMode = useDarkModeStore();
 const selectedPhoto = ref(0);
 
 const photos = ref([
-  { id: 0, src: require('@/assets/img/home/clientes-6.jpg'), alt: '' },
-  { id: 1, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 2, src: require('@/assets/img/home/clientes-5.jpg'), alt: '' },
-  { id: 3, src: require('@/assets/img/home/clientes-8.jpg'), alt: '' },
+  { id: 0, src: require('@/assets/img/equipamentos/espelho/clientes-6.jpg'), alt: '' },
+  { id: 1, src: require('@/assets/img/equipamentos/espelho/clientes-5.jpg'), alt: '' },
+  { id: 2, src: require('@/assets/img/equipamentos/espelho/clientes-5.jpg'), alt: '' },
+  { id: 3, src: require('@/assets/img/equipamentos/espelho/clientes-8.jpg'), alt: '' },
 ]);
 
 const plansSection = ref({
@@ -77,12 +78,12 @@ const productInfo = ref({
 const planos = ref([
   {
     id: 1,
-    duration: '1h',
+    duration: '2h',
     name: 'Plano Essencial',
     description: 'Perfeito para eventos corporativos e pequenas celebrações',
     popular: false,
     features: [
-      '1 hora de totem fotográfico',
+      '2 hora de totem fotográfico',
       'Impressão ilimitada de fotos',
       'Interface touchscreen intuitiva',
       'Filtros e molduras básicas',
@@ -91,12 +92,12 @@ const planos = ref([
   },
   {
     id: 2,
-    duration: '2h',
+    duration: '3h',
     name: 'Plano Celebração',
     description: 'Ideal para festas e eventos sociais',
     popular: true,
     features: [
-      '2 horas de totem fotográfico',
+      '3 horas de totem fotográfico',
       'Impressão ilimitada de fotos',
       'Filtros e molduras personalizadas',
       'Compartilhamento via QR Code',
@@ -106,12 +107,12 @@ const planos = ref([
   },
   {
     id: 3,
-    duration: '3h',
+    duration: '4h',
     name: 'Plano Premium',
     description: 'Para eventos grandes e especiais',
     popular: false,
     features: [
-      '3 horas de totem fotográfico',
+      '4 horas de totem fotográfico',
       'Impressão ilimitada de fotos',
       'Personalização completa da interface',
       'Filtros e molduras exclusivas',
@@ -148,7 +149,7 @@ const steps = ref([
 const montagemInfo = ref({
   titlePart1: 'Montagem e',
   titlePart2: 'Desmontagem',
-  image: require('@/assets/img/home/totem.jpg'),
+  image: require('@/assets/img/equipamentos/totem/totem.jpg'),
   imageAlt: 'Equipe realizando montagem do Totem Fotográfico',
   listTitle: 'O que incluímos:',
   paragraphs: [
@@ -157,16 +158,29 @@ const montagemInfo = ref({
     'Ao final do evento, realizamos a desmontagem cuidadosa de todo o equipamento e disponibilizamos todas as fotos em galeria digital online para download ilimitado.'
   ],
   listItems: [
-    'Montagem e posicionamento do totem',
+    'Montagem do totem',
     'Operador técnico durante o evento',
     'Sistema de iluminação LED profissional',
-    'Impressora térmica de alta velocidade',
-    'Papel fotográfico de qualidade premium',
+    'Acessórios Personalizados',
     'Galeria digital com todas as fotos',
-    'Personalização da interface',
-    'Desmontagem e limpeza final'
+    'Desmontagem ao final do evento'
   ]
 });
+
+const perguntasFrequentes = ref([
+  {
+    question: 'Como funciona o Totem Fotográfico?',
+    answer: 'O Totem Fotográfico é um equipamento interativo que permite aos convidados tirar fotos, personalizá-las com filtros e molduras, e imprimi-las instantaneamente. É fácil de usar, basta tocar na tela para iniciar.'
+  },
+  {
+    question: 'É possível personalizar as fotos?',
+    answer: 'Sim! O Totem Fotográfico oferece diversas opções de personalização, incluindo filtros, molduras e efeitos especiais.'
+  },
+  {
+    question: 'Como recebo as fotos do evento?',
+    answer: 'Todas as fotos tiradas durante o evento são disponibilizadas em uma galeria digital online, onde você pode fazer download ilimitado.'
+  }
+]);
 </script>
 
 <style scoped>
