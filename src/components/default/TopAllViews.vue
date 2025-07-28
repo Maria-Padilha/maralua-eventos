@@ -1,62 +1,101 @@
 <template>
-<!--  <v-virtual-scroll-->
-<!--      direction="vertical"-->
-<!--      height="80vh"-->
-<!--      width="100%"-->
-<!--      @load="load"-->
-<!--      :items="[{ content: 'router-view' }]"-->
-<!--      class="no-horizontal-scroll px-5"-->
-<!--      :class="darkMode.darkMode ? 'bg-dark-primary' : 'bg-light-primary'"-->
-<!--  >-->
-    <v-main :class="darkMode.darkMode ? 'bg-dark-primary' : 'bg-light-primary'">
+  <v-main :class="darkMode.darkMode ? 'bg-dark-primary' : 'bg-light-primary'">
 
-      <main class="mt-10 w-[100%]">
+    <main class="mt-10 w-[100%]">
 
-        <div class="fab-stack">
-          <v-fab
-              color="pink"
-              @click="openInstagram"
-              size="small"
-              icon
+      <div class="fab-stack">
+        <v-fab
+            color="pink"
+            @click="openInsta = true"
+            size="small"
+            icon
+        >
+          <v-icon size="23px" icon="mdi-instagram"/>
+        </v-fab>
+
+        <v-fab
+            color="green"
+            @click="openWpp = true"
+            size="small"
+            icon
+            class="mt-2"
+        >
+          <v-icon size="23px" icon="mdi-whatsapp"/>
+        </v-fab>
+      </div>
+
+      <slot name="init"/>
+
+      <section class="w-[80%] mx-auto flex flex-col items-center justify-center">
+        <slot name="section"/>
+      </section>
+
+      <slot name="meio"></slot>
+
+      <section class="w-[80%] mx-auto flex flex-col items-center justify-center">
+        <slot name="section-2"/>
+      </section>
+
+      <slot name="end"></slot>
+    </main>
+    <footer-bar/>
+  </v-main>
+
+  <v-dialog max-width="350" v-model="dialogOpen">
+    <v-card :color="darkMode.darkMode ? '#282828' : ''">
+      <div class="flex flex-col items-center my-5 px-3">
+        <v-icon icon="mdi-alert-circle-outline" size="60px" :color="openWpp ? 'green' : 'pink'"></v-icon>
+        <p class="mt-3 text-xl">Deseja sair do Site?</p>
+        <p class="mt-3 text-center">Ao confirmar, você será redirecionado para o {{openWpp ? 'WhatsApp' : 'Instagram'}}</p>
+
+        <div class="flex items-center justify-center gap-2 my-5 flex-wrap">
+          <v-btn
+              class="text-none" variant="tonal"
+              :color="darkMode.darkMode ? '#ffa378' : '#ff4d00'"
+              @click="openWpp ? openWpp = false : openInsta = false"
           >
-            <v-icon size="23px" icon="mdi-instagram"/>
-          </v-fab>
+            Cancelar
+          </v-btn>
 
-          <v-fab
-              color="green"
+          <v-btn
+              v-if="openWpp" class="text-none" variant="flat" color="green"
               @click="openWhatsApp"
-              size="small"
-              icon
-              class="mt-2"
           >
-            <v-icon size="23px" icon="mdi-whatsapp"/>
-          </v-fab>
+            Confirmar
+          </v-btn>
+
+          <v-btn
+              v-if="openInsta" class="text-none" variant="flat" color="pink"
+              @click="openInstagram"
+          >
+            Confirmar
+          </v-btn>
+
         </div>
-
-        <slot name="init"/>
-
-        <section class="w-[80%] mx-auto flex flex-col items-center justify-center">
-          <slot name="section"/>
-        </section>
-
-        <slot name="meio"></slot>
-
-        <section class="w-[80%] mx-auto flex flex-col items-center justify-center">
-          <slot name="section-2"/>
-        </section>
-
-        <slot name="end"></slot>
-      </main>
-      <footer-bar/>
-    </v-main>
-<!--  </v-virtual-scroll>-->
+      </div>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script setup>
 import {useDarkModeStore} from "@/stores/themes/darkmode";
 import FooterBar from "@/components/default/FooterBar.vue";
+import {ref, computed} from 'vue';
 
 const darkMode = useDarkModeStore();
+
+const openWpp = ref(false);
+const openInsta = ref(false);
+
+const dialogOpen = computed({
+  get: () => openWpp.value || openInsta.value,
+  set: (val) => {
+    if (!val) {
+      openWpp.value = false;
+      openInsta.value = false;
+    }
+  }
+});
 
 const openWhatsApp = () => {
   const phoneNumber = '5565996327585';

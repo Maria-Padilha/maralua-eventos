@@ -225,7 +225,7 @@
       </section>
 
       <section class="mt-10 w-[100%] flex flex-col items-center justify-center">
-        <h2 class="text-3xl font-bold mb-4">
+        <h2 class="text-3xl font-bold mb-4 text-center">
           Veja Alguns <span class="texto-color-laranja">Feedbacks</span>
         </h2>
 
@@ -274,7 +274,7 @@
 
             <v-window-item v-for="avaliacao in avaliacoes" :key="avaliacao.id">
               <v-card
-                  class="ma-4 pa-4 w-[85%] mx-auto" color="background-card"
+                  class="ma-4 pa-4 w-[100%] md:w-[85%] mx-auto" color="background-card"
                   elevation="0" @click="toggle"
               >
                 <div class="flex items-center gap-5">
