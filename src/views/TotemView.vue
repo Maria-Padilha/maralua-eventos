@@ -49,10 +49,10 @@ const darkMode = useDarkModeStore();
 const selectedPhoto = ref(0);
 
 const photos = ref([
-  { id: 0, src: require('@/assets/img/equipamentos/espelho/clientes-6.jpg'), alt: '' },
-  { id: 1, src: require('@/assets/img/equipamentos/espelho/clientes-5.jpg'), alt: '' },
-  { id: 2, src: require('@/assets/img/equipamentos/espelho/clientes-5.jpg'), alt: '' },
-  { id: 3, src: require('@/assets/img/equipamentos/espelho/clientes-8.jpg'), alt: '' },
+  { id: 0, src: require('@/assets/img/equipamentos/totem/meninas-fantasia.jpg'), alt: '' },
+  { id: 1, src: require('@/assets/img/equipamentos/totem/casal.jpg'), alt: '' },
+  { id: 2, src: require('@/assets/img/equipamentos/totem/grupo-fantasia.jpg'), alt: '' },
+  { id: 3, src: require('@/assets/img/equipamentos/totem/trinhas-duplas.jpg'), alt: '' },
 ]);
 
 const plansSection = ref({

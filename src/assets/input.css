@@ -8,7 +8,7 @@
 
     --color-dark-primary: #121212;
     --color-dark-secondary: #282828;
-    --color-dark-orange-medium: #ffa366;
+    --color-dark-orange-medium: #d75506;
     --color-dark-orange: #ffaf65;
 }
 
@@ -26,7 +26,7 @@
 .dark {
     --color-primary: #121212;
     --color-secondary: #282828;
-    --color-orange-medium: #ffa366;
+    --color-orange-medium: #f5903f;
     --color-orange: #ffaf65;
 
     --color-card: #393939;
@@ -38,8 +38,16 @@
     color: var(--color-orange) !important;
 }
 
+.texto-secondary {
+    color: var(--color-secondary) !important;
+}
+
 .background-card {
     background-color: var(--color-card) !important;
+}
+
+.background-laranja {
+    background-color: var(--color-orange-medium) !important;
 }
 
 body {

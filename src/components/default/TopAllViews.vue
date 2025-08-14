@@ -7,20 +7,18 @@
         <v-fab
             color="pink"
             @click="openInsta = true"
-            size="small"
             icon
         >
-          <v-icon size="23px" icon="mdi-instagram"/>
+          <v-icon size="25px" icon="mdi-instagram"/>
         </v-fab>
 
         <v-fab
             color="green"
             @click="openWpp = true"
-            size="small"
             icon
             class="mt-2"
         >
-          <v-icon size="23px" icon="mdi-whatsapp"/>
+          <v-icon size="25px" icon="mdi-whatsapp"/>
         </v-fab>
       </div>
 

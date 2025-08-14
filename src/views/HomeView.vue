@@ -92,7 +92,62 @@
 
     <!-- Seção de Funcionalidades -->
     <template #meio>
-      <section class="mt-10 background-card py-5">
+      <section class="mt-10 background-laranja py-5">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Novidades</h2>
+          <p class="texto-color-primary max-w-2xl mx-auto texto-pequeno-15 opacity-70">
+            Descubra as últimas inovações que trazemos para tornar seu evento ainda mais especial.
+            Nosso novo serviço inclui a <span class="font-bold text-uppercase texto-secondary">Expia a Foto</span> - Fotos instantâneas e de alta qualidade,
+            podendo ser tirada em qualquer lugar.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 mt-10 items-center">
+          <div data-aos="zoom-in-left" data-aos-duration="1400" class="boxShadow-2 pa-3 flex items-end">
+            <v-sheet class="w-[100%] bg-transparent">
+              <v-img height="100%" alt="foto dos acessórios" class="mx-auto w-[100%] md:w-[100%] rounded-sm"
+                     :src="require('@/assets/img/equipamentos/expiaFoto/1.png')">
+                <template v-slot:placeholder>
+                  <lazy-image/>
+                </template>
+              </v-img>
+            </v-sheet>
+
+            <v-sheet class="w-[100%] bg-transparent">
+              <v-img height="100%" alt="foto dos acessórios" class="mx-auto w-[100%] md:w-[100%] rounded-sm"
+                     :src="require('@/assets/img/equipamentos/expiaFoto/2.png')">
+                <template v-slot:placeholder>
+                  <lazy-image/>
+                </template>
+              </v-img>
+            </v-sheet>
+          </div>
+
+          <div data-aos="zoom-in-right" data-aos-duration="1400" class="flex flex-col gap-4 pl-10">
+            <h3 class="text-xl font-bold texto-secondary">EXPIA A FOTO</h3>
+
+            <ul class="space-y-3">
+              <li v-for="(item, index) in itens" :key="index" class="flex items-start texto-secondary opacity-90 gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="w-6 h-6 flex-shrink-0 mt-1"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor"
+                     stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+
+            <v-btn to="/contact" class="text-none mt-3 w-fit" variant="outlined" color="var(--color-secondary)">
+              Entrar em Contato
+            </v-btn>
+          </div>
+        </div>
+      </section>
+
+      <section class="background-card py-5">
         <div class="text-center">
           <h2 class="text-3xl font-bold mb-4">
             Formato de <span class="texto-color-laranja">Fotos</span>
@@ -403,6 +458,7 @@ const avaliacoes = ref([
 const marcas = ref([
   {id: 1, src: require('@/assets/img/marcas/1.png'), alt: 'BlueFit'},
   {id: 2, src: require('@/assets/img/marcas/2.png'), alt: 'Cielo'},
+  {id: 10, src: require('@/assets/img/marcas/10.png'), alt: 'Coco Bambu'},
   {id: 3, src: require('@/assets/img/marcas/3.png'), alt: 'Sicredi'},
   {id: 4, src: require('@/assets/img/marcas/4.png'), alt: 'Studio Z'},
   {id: 5, src: require('@/assets/img/marcas/5.png'), alt: 'Centro oeste - energia solar'},
@@ -410,6 +466,15 @@ const marcas = ref([
   {id: 7, src: require('@/assets/img/marcas/7.png'), alt: 'Ixpia dica'},
   {id: 8, src: require('@/assets/img/marcas/8.png'), alt: 'Track&Field'},
   {id: 9, src: require('@/assets/img/marcas/9.png'), alt: 'Colégio São Gonçalo'},
+]);
+
+const itens = ref([
+  "Fotos instantâneas e de alta qualidade",
+  "Entretenimento para todas as idades",
+  "Impressões personalizadas na hora",
+  "Lembrança única para os convidados levarem para casa",
+  "Até 3 molduras personalizadas",
+  "Acessórios como óculos, plumas e arcos inclusos"
 ]);
 
 const updateTime = () => {
@@ -437,6 +502,11 @@ onMounted(() => {
 .boxShadow {
   border-radius: 5px;
   box-shadow: 0 4px 6px var(--color-orange-medium), 0 1px 3px var(--color-orange);
+}
+
+.boxShadow-2 {
+  border-radius: 5px;
+  box-shadow: 0 4px 6px var(--color-secondary), 0 1px 3px var(--color-secondary);
 }
 
 </style>
