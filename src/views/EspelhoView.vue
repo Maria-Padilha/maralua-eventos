@@ -128,7 +128,7 @@ const steps = ref([
   {
     id: 2,
     title: 'Escolha seu Estilo',
-    description: 'Selecione entre diversos filtros, molduras e efeitos especiais personalizados para seu evento'
+    description: 'Selecione entre diversas molduras personalizadas para seu evento'
   },
   {
     id: 3,

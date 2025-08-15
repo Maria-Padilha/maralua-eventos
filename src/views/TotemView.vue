@@ -132,7 +132,7 @@ const steps = ref([
   {
     id: 2,
     title: 'Personalize sua Foto',
-    description: 'Escolha entre diversos filtros, molduras e efeitos disponíveis na interface intuitiva'
+    description: 'Selecione entre diversas molduras personalizadas para seu evento'
   },
   {
     id: 3,
