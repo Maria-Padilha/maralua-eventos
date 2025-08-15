@@ -17,7 +17,7 @@
 
           <!-- Formulário -->
           <v-row data-aos="zoom-in" data-aos-duration="1200" justify="center">
-            <v-col cols="12" md="8" lg="6">
+            <v-col cols="12" md="8" lg="7">
               <v-card
                   class="pa-8 elevation-8 background-card"
                   elevation="0" rounded="lg"
@@ -34,6 +34,7 @@
                           :rules="[rules.required]"
                           color="orange"
                           hide-details="auto"
+                          clearable
                           prepend-inner-icon="mdi-account"
                       ></v-text-field>
                     </v-col>
@@ -47,6 +48,7 @@
                           variant="outlined"
                           color="orange"
                           hide-details="auto"
+                          clearable
                           prepend-inner-icon="mdi-calendar"
                       ></v-text-field>
                     </v-col>
@@ -60,6 +62,7 @@
                           variant="outlined"
                           color="orange"
                           hide-details="auto"
+                          clearable
                           prepend-inner-icon="mdi-party-popper"
                       ></v-select>
                     </v-col>
@@ -73,6 +76,7 @@
                           variant="outlined"
                           color="orange"
                           hide-details="auto"
+                          clearable
                           prepend-inner-icon="mdi-camera"
                           @update:model-value="form.plano = ''"
                       ></v-select>
@@ -90,6 +94,7 @@
                           :disabled="!form.produto"
                           item-title="label"
                           item-value="value"
+                          clearable
                           hide-details="auto"
                       ></v-select>
                     </v-col>
@@ -105,6 +110,7 @@
                           rows="4"
                           prepend-inner-icon="mdi-message-text"
                           no-resize
+                          clearable
                           hide-details="auto"
                       ></v-textarea>
                     </v-col>
@@ -159,7 +165,8 @@ const produtos = [
   'Plataforma 360',
   'Espelho Mágico',
   'Cabine Fotográfica',
-  'Totem Fotográfico'
+  'Totem Fotográfico',
+  'Expia a Foto',
 ];
 
 const tiposEvento = [
@@ -193,7 +200,12 @@ const planosDisponiveis = computed(() => {
       { value: 'Plano Essencial - 1h', label: 'Plano Básico (1 hora)' },
       { value: 'Plano Celebração - 2h', label: 'Plano Intermediário (2 horas)' },
       { value: 'Plano Premium - 3h', label: 'Plano Premium (3 horas)' }
-    ]
+    ],
+    'Expia a Foto': [
+      { value: 'Plano Essencial - 1h', label: 'Plano Básico (1 hora)' },
+      { value: 'Plano Celebração - 2h', label: 'Plano Intermediário (2 horas)' },
+      { value: 'Plano Premium - 3h', label: 'Plano Premium (3 horas)' }
+    ],
   };
 
   return planos[form.value.produto] || [];
