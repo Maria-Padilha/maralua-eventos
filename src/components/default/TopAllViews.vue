@@ -111,7 +111,7 @@ const openInstagram = () => {
 <style scoped>
 .fab-stack {
   position: fixed;
-  right: 15px;
+  right: 25px;
   bottom: 32px;
   display: flex;
   flex-direction: column;

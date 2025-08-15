@@ -106,7 +106,7 @@
           <div data-aos="zoom-in-left" data-aos-duration="1400" class="boxShadow-2 pa-3 flex items-end">
             <v-sheet class="w-[100%] bg-transparent">
               <v-img height="100%" alt="foto dos acessórios" class="mx-auto w-[100%] md:w-[100%] rounded-sm"
-                     :src="require('@/assets/img/equipamentos/expiaFoto/1.png')">
+                     :src="require('@/assets/img/equipamentos/expiaFoto/1.png')" :lazy-src="require('@/assets/img/equipamentos/expiaFoto/1.png')">
                 <template v-slot:placeholder>
                   <lazy-image/>
                 </template>
@@ -115,7 +115,7 @@
 
             <v-sheet class="w-[100%] bg-transparent">
               <v-img height="100%" alt="foto dos acessórios" class="mx-auto w-[100%] md:w-[100%] rounded-sm"
-                     :src="require('@/assets/img/equipamentos/expiaFoto/2.png')">
+                     :src="require('@/assets/img/equipamentos/expiaFoto/2.png')" :lazy-src="require('@/assets/img/equipamentos/expiaFoto/2.png')">
                 <template v-slot:placeholder>
                   <lazy-image/>
                 </template>
@@ -123,7 +123,7 @@
             </v-sheet>
           </div>
 
-          <div data-aos="zoom-in-right" data-aos-duration="1400" class="flex flex-col gap-4 pl-10">
+          <div data-aos="zoom-in-right" data-aos-duration="1400" class="flex flex-col gap-4 pl-8">
             <h3 class="text-xl font-bold texto-secondary">EXPIA A FOTO</h3>
 
             <ul class="space-y-3">
