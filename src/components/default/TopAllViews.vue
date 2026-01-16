@@ -96,7 +96,7 @@ const dialogOpen = computed({
 });
 
 const openWhatsApp = () => {
-  const phoneNumber = '5565996327585';
+  const phoneNumber = '5565984475078';
   const message = 'Olá, vim pelo site da Maralua! Gostaria de mais informações sobre os serviços.';
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');

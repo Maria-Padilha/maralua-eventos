@@ -218,7 +218,7 @@ const enviarWhatsApp = async () => {
     return;
   }
 
-  const numeroWhatsApp = '556596327585';
+  const numeroWhatsApp = '5565984475078';
   let mensagem = '';
 
   // Verifica se pelo menos um campo foi preenchido (exceto nome e telefone que são obrigatórios)
